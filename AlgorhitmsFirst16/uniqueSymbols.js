@@ -27,8 +27,6 @@ function isUnique(word) {
   return true;
 }
 
-if (isUnique("abcdeABCDE")) {
-  console.log("Нет дубликатов");
-} else {
-  console.log("Есть дубликаты");
-}
+console.log(isUnique("abcdef"));
+console.log(isUnique("12345"));
+console.log(isUnique("abcdaf"));
