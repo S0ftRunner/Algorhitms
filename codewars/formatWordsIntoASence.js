@@ -4,13 +4,23 @@
  * @returns {string}
  */
 function formatWords(words) {
-  if (!words.length) return "";
-  if (words.length === 1) return words.join();
-
-  return words.join().replaceAll(',', ', ').replace(/,\s\w+$/, ' and ') + words[words.length - 1];
+  if (!words?.length) return "";
+  if (words?.length === 1) return words.join();
+  const wordsCorrectArr = words.filter((element) => {
+    return element !== '';
+  });
+  const finalCorrectArr = wordsCorrectArr.join(', ').split(' ');
+  if (finalCorrectArr?.length === 1) return finalCorrectArr.join();
+  finalCorrectArr[finalCorrectArr?.length - 2] = finalCorrectArr[finalCorrectArr?.length - 2].replace(',', ' and');
+  return finalCorrectArr.join(' ');
 }
 
-console.log(formatWords(['one', '', 'three']));
+console.log(formatWords(['one', '', '', 'three']));
+
 /**
- * TODO: Доработать решение
+ * Лучшее решение:
+ * function formatWords(words){
+  if (!words) return "";
+  return words.filter(function(a) { return a !== ''}).join(', ').replace(/(, )+(\S+)$/, ' and $2');
+}
  */
