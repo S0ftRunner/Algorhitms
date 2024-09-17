@@ -1,19 +1,23 @@
-/**
- *
- * @param {number} n
- */
+/**@param {number} n */
 function deleteDigit(n) {
-  const stringNumber = n.toString();
-  if (stringNumber.length === 0) return n;
-  const numbersArray = [];
+  let answer = 0;
+  let stringNumber = n.toString();
   for (let i = 0; i < stringNumber.length; i++) {
-    numbersArray.push(
-      stringNumber.substring(0, i) +
-        stringNumber.substring(i + 1, stringNumber.length - 1)
-    );
+    let nowNumber =
+      stringNumber.slice(0, i) + stringNumber.slice(i + 1, stringNumber.length);
+    if (nowNumber > answer) {
+      answer = Number.parseInt(nowNumber);
+    }
   }
-
-  console.log(numbersArray);
+  return answer;
 }
+console.log(deleteDigit(10));
 
-deleteDigit(1004);
+/*
+Лучшее решение:
+
+function deleteDigit(n) {
+  const s = String(n)
+  return Math.max(...Array.from(s, (_, i) => s.slice(0, i) + s.slice(i + 1)))
+}
+*/
