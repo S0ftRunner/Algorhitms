@@ -1,15 +1,9 @@
-
+// обязательно сделать именно через регулярку
 /**
- * 
- * @param {string} str 
+ *
+ * @param {string} str
  */
 function isValidIp(str) {
-  let flag = true;
-  let arr = str.split('.');
-  let countDots = str.matchAll()
-  for (let num of arr) {
-    if (num < 0 || num > 255) flag = false;
-  }
+  return /^(?!0)(?!.*\.$)((1?\d?\d|25[0-5]|2[0-4]\d)(\.|$)){4}$/.test(str);
 }
-
-console.log(isValidIp('1.2.3.4'));
+console.log(isValidIp("1.2.03.4"));
