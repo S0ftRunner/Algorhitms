@@ -1,0 +1,3 @@
+var runLengthEncoding = function(str) {
+  
+}
