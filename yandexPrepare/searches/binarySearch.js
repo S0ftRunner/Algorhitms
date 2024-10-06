@@ -29,4 +29,23 @@ function binarySearch(array, target) {
   return position;
 }
 
-console.log(binarySearch(arr, 5));
+
+function recursiveBinarySearch(array, target, start, end) {
+  let middle = Math.floor((start + end) / 2);
+
+  if (target === array[middle]) {
+    return middle;
+  }
+
+  if (target < array[middle]) {
+    return recursiveBinarySearch(array, target, start, middle - 1);
+  } else {
+    return recursiveBinarySearch(array, target, middle + 1, end);
+  }
+
+}
+
+
+console.log(recursiveBinarySearch(arr, 11, 0, arr.length));
+
+// console.log(binarySearch(arr, 5));
