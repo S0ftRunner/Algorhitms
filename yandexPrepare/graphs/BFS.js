@@ -17,6 +17,7 @@ graph.f = ['g'];
 function breadthSearch(graph, start, end) {
   // создаем очередь
   let queue = [];
+  const path = [];
 
   // добавляем стартовую точку
   queue.push(start);
@@ -25,6 +26,7 @@ function breadthSearch(graph, start, end) {
   while(queue.length > 0) {
     // получаем текущую вершину
     const current = queue.shift();
+    path.push(current);
 
     // если в текущей вершине в графе ничего не находится, то присвоим по этой вершине пустой массив
     if (!graph[current]) {
@@ -33,6 +35,7 @@ function breadthSearch(graph, start, end) {
 
     // если в графе по текущей вершине массив содержит конечную точку, то мы завершаем выполнение программы.
     if (graph[current].includes(end)) {
+      console.log(path);
       return true;
     } else {
       queue = [...queue, ...graph[current]]
@@ -43,7 +46,7 @@ function breadthSearch(graph, start, end) {
 }
 
 
-console.log(breadthSearch(graph, 'a', 'v'));
+console.log(breadthSearch(graph, 'a', 'e'));
 
 
 
