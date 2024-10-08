@@ -1,17 +1,9 @@
-// function intersectionSet(arr1, arr2){
-//   const resultArr = [];
+function intersectionSet(arr1, arr2){
 
 
-//   for (let i = 0;)
-// }
+  const intersection = arr1.filter(value => arr2.includes(value));
+  console.log(intersection.sort());
+}
 
 
-console.log('start');
-
-Promise.resolve(console.log(1)).then(() => {console.log(2)});
-
-setTimeout(() => {
-  console.log('TimeOut');
-})
-
-console.log('end');
+intersectionSet([1, 2, 3, 2, 0], [5, 1, 2, 7, 3, 2]);
