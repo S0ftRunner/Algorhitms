@@ -1,18 +1,21 @@
-const users = [
-  {
-    id: 1,
-    name: 'Ivan'
-  },
+(() => {
 
-  {
-    id: 2,
-    name: 'Sergey'
+  let x, y;
+
+  try {
+
+    throw new Error();
+
+  } catch (x) {
+
+    (x = 1), (y = 2);
+
+    console.log(x);
+
   }
-];
 
-const clonedUsers = JSON.parse(JSON.stringify(users));
-const clonedUsers2 = [...users];
+  console.log(x);
 
-clonedUsers2[0].name = 'Alex';
-clonedUsers[0].name = 'Konstantin';
-console.log(users[0].name);
+  console.log(y);
+
+})();

@@ -18,7 +18,16 @@ function diapasonses(arr) {
 
   resultArr.push(arr.slice(position, arr.length));
 
-  console.log(resultArr);
+  for (let i = 0; i < resultArr.length; i++) {
+    console.log(packageDiapasonses(resultArr[i]));
+  }
 }
 
+
+function packageDiapasonses(arr) {
+  if (arr.length === 1) return [arr[0].toString()];
+  if (arr.length === 2) return [`${arr[0]}, ${arr[1]}`];
+
+  return [`${arr[0]}-${arr.length - 1}`];
+}
 diapasonses([1,4,5,2,3,9,8,11,0]);
