@@ -7,3 +7,4 @@ function kebabize(str) {
 }
 
 console.log(kebabize('CAMEL'));
+//add smth

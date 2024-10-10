@@ -12,13 +12,29 @@
  * console.log(flatArray([[1], [[2, 3]], [[[4]]]])) -> [1, 2, 3, 4]
  */
 
-function flatArray(array) {
-  const res = [];
+// function flatArray(array) {
+//   const res = [];
 
 
-  return res;
+//   return res;
+// }
+
+// const array = [[1], [[2, 3]], [[[4]]]];
+
+// console.log(flatArray(array));
+
+let obj = {
+  side: 5,
+
+  area() {
+    return this.side * this.side;
+  },
+
+  perimetr: () => {
+    return this.side * 5;
+  }
 }
 
-const array = [[1], [[2, 3]], [[[4]]]];
+console.log(obj.area());
 
-console.log(flatArray(array));
+console.log(obj.perimetr());
