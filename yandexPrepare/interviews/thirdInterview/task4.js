@@ -13,7 +13,7 @@ function anagrams(arr) {
     map.set(key, [...map.get(key) || [], element]);
 
   }
-  console.log(...map.values());
+  console.log(Array.from(map.values()));
 }
 
 

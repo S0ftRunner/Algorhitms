@@ -95,14 +95,48 @@
 
 // context
 
-const user = {
-  side: 5,
+// const user = {
+//   side: 5,
 
-  area() {
-    return this.side * this.side;
-  },
+//   area() {
+//     return this.side * this.side;
+//   },
 
-  perimetr: () => {
-    return this.side * 4; // контекст теряется
+//   perimetr: () => {
+//     return this.side * 4; // контекст теряется
+//   }
+// }
+
+// findMaxArrSequence
+
+// function findMax(arr) {
+//   let maxCount = 0;
+//   let count = 0;
+
+//   arr.forEach(el => {
+
+//     if (el === 1) {
+//       count++;
+//       if (maxCount < count) maxCount = count;
+//     } else {
+//       count = 0;
+//     }
+
+//   })
+//   return new Array(maxCount).fill(1);
+// }
+
+
+// console.log(findMax([1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1]));
+
+// palindrome
+
+function isPalindrome(str) {
+  str = str.toLowerCase();
+  for (let i = 0, j = str.length - 1; i < str.length, j >= 0; i++, j--) {
+    if (str[i] !== str[j]) return false;
   }
+  return true;
 }
+
+console.log(isPalindrome('abbA'));
