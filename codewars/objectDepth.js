@@ -1,12 +1,8 @@
 function depth(obj) {
+  if (Object.keys(obj).length === 0) return 0;
+  const keys = Object.keys(obj);
 
-  if (Array.isArray(obj)) return 0;
-  let sum = 0;
 
-  const stack = Object.keys();
-  
 
-  
-  
-  return sum;
+  return 1 + depth(obj);
 }
